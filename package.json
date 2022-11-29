@@ -2,7 +2,6 @@
   "name": "your_meal",
   "version": "1.0.0",
   "description": "Cервис по доставке еды, которую я не ем",
-  "main": "index.js",
   "scripts": {
     "git":  "git add . && git commit -m $msg && git push"
   },
