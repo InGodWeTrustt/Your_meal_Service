@@ -1,9 +1,10 @@
 {
   "name": "your_meal",
   "version": "1.0.0",
+  "main": "js/index.js",
   "description": "Cервис по доставке еды, которую я не ем",
   "scripts": {
-    "git":  "git add . && git commit -m \"update\" && git push"
+    "git":  "git add . && git commit -m \"День 1\" && git push"
   },
   "keywords": ["javascript"],
   "author": {
