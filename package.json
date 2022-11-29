@@ -4,7 +4,6 @@
   "description": "Cервис по доставке еды, которую я не ем",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "git":  "git add . && git commit -m \"$msg\" && git push"
   },
   "keywords": ["javascript"],
