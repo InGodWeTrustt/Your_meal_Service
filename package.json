@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cервис по доставке еды, которую я не ем",
   "scripts": {
-    "git":  "git add . && git commit -m $msg && git push"
+    "git":  "git add . && git commit -m \"update\" && git push"
   },
   "keywords": ["javascript"],
   "author": {
