@@ -4,7 +4,7 @@
   "main": "js/index.js",
   "description": "Cервис по доставке еды, которую я не ем",
   "scripts": {
-    "git":  "git add . && git commit -m \"День 1\" && git push"
+    "git":  "git add . && git commit -m \"День 2\" && git push"
   },
   "keywords": ["javascript"],
   "license": "ISC"
