@@ -1,3 +1,4 @@
+import { cartInit } from "./cart.js";
 import { createCardProduct } from "./createCardProduct.js";
 import {
     catalogList,
@@ -5,30 +6,16 @@ import {
 } from "./elements.js";
 import { navigationListController } from "./navigationListController.js";
 import { openModal } from "./openModal.js";
+import { renderCartList } from "./cart.js";
 import { renderListProduct } from "./renderListProduct.js";
-
-
-const burgerMax = {
-    title: 'Бургер Макс',
-    price: 10000,
-    weight: 5000,
-    calories: 150000,
-    description: 'Огромный бургер',
-    image: 'img/megaburger.jpg',
-    ingredients: [
-        'Пшеничная булка',
-        'Котлета из говядины',
-        'Много сыра',
-        'Листья салата'
-    ]
-}
 
 
 // Добавим обработчик события клика по элементу
 catalogList.addEventListener('click', event => {
     const target = event.target
     if (target.closest('.product__detail') || target.closest('.product__image')) {
-        openModal(burgerMax)
+        const id = target.closest('.product').dataset.idProduct;
+        openModal(id);
     }
 })
 
@@ -44,7 +31,8 @@ modalProduct.addEventListener('click', () => {
 
 const init = () => {
     renderListProduct();
-    navigationListController()
+    navigationListController(renderListProduct)
+    cartInit()
 }
 
 init()
