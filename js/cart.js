@@ -3,8 +3,8 @@ import { API_URL, PREFIX_PRODUCT } from "./const.js"
 import { getData } from "./getData.js"
 
 export const getCart = () => {
-    const cartList = localStorage.getItem('cart')
-    if (cartList) {
+    const cartList = localStorage.getItem('cart');
+    if(cartList){
         return JSON.parse(cartList)
     } else {
         return []
@@ -19,13 +19,12 @@ export const renderCartList = async () => {
     const countProduct = cartList.reduce((acc, item) => acc + item.count, 0)
     orderCount.textContent = countProduct;
 
-   
-    const cartItems = data.map( item => {
+    const cartItems = data.map(item => {
         const li = document.createElement('li')
         li.classList.add('order__item')
         li.dataset.idProduct = item.id;
 
-        const product = cartList.find( cartItem => cartItem.id  === item.id)
+        const product = cartList.find(cartItem => cartItem.id === item.id)
 
 
         li.innerHTML = `
@@ -47,14 +46,14 @@ export const renderCartList = async () => {
           <button class="count__plus">+</button>
         </div>
         `
-
+        return li;
     })
 
     orderList.textContent = '';
     orderList.append(...cartItems)
 }
 
-const updateCartList = () => {
+const updateCartList = (cartList) => {
     localStorage.setItem('cart', JSON.stringify(cartList))
     renderCartList()
 }
