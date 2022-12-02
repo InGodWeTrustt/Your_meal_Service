@@ -1,12 +1,13 @@
+import { clearCart } from "./cart.js"
 import { modalDeliveryForm } from "./elements.js"
 
 export const orderController = (getCart) => {
     modalDeliveryForm.addEventListener('change', () => {
-        if(modalDeliveryForm.format.value === 'pickup'){
+        if (modalDeliveryForm.format.value === 'pickup') {
             modalDeliveryForm['address-info'].classList.add('modal-delivery__fieldset-input_hide')
         }
 
-        if(modalDeliveryForm.format.value === 'delivery'){
+        if (modalDeliveryForm.format.value === 'delivery') {
             modalDeliveryForm['address-info'].classList.remove('modal-delivery__fieldset-input_hide')
         }
     })
@@ -25,6 +26,7 @@ export const orderController = (getCart) => {
             method: 'post',
             body: JSON.stringify(data),
         }).then(res => res.json())
-         .then(data => console.log(data))
+            .then(data => console.log(data))
+            .finally(clearCart)
     })
 }

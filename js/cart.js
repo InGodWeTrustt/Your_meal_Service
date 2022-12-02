@@ -106,7 +106,7 @@ const removeCart = (id) => {
     updateCartList(cartList)
 }
 
-const clearCart = () => {
+export const clearCart = () => {
     localStorage.removeItem('cart')
     renderCartList()
 }
