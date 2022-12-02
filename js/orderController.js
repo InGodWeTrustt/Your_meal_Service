@@ -37,7 +37,7 @@ export const orderController = (getCart) => {
                 const ul = document.querySelector('ul')
                 data.order.forEach(item => {
                     ul.insertAdjacentHTML('beforebegin', `<li>${item.title}</li>`)
-                }
+                })
 
                 modalDeliveryContainer.insertAdjacentElement('beforebegin')
             })
