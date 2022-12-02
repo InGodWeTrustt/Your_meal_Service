@@ -30,6 +30,10 @@
   margin-bottom: 24px;
 }
 
+.modal-delivery__fieldset-input_hide{
+  visibility: hidden;
+}
+
 .modal-delivery__fieldset-input:last-child {
   margin-bottom: 0;
 }

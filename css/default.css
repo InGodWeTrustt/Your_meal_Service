@@ -82,6 +82,7 @@ fieldset {
   cursor: pointer;
   overflow-y: auto;
   display: none;
+  z-index: 20;
 }
 
 .modal_open {
