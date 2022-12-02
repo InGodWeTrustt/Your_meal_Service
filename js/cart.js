@@ -12,6 +12,7 @@ export const getCart = () => {
     }
 }
 
+
 export const renderCartList = async () => {
     // Cписок товаров в корзине, взятый из локального хранилища по ключу 'cart'
     const cartList = getCart() // [{id, count}]
@@ -104,6 +105,12 @@ const removeCart = (id) => {
 
     updateCartList(cartList)
 }
+
+const clearCart = () => {
+    localStorage.removeItem('cart')
+    renderCartList()
+}
+
 
 const cartController = () => {
     catalogList.addEventListener('click', ({ target }) => {

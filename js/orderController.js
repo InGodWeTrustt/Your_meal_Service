@@ -16,7 +16,7 @@ export const orderController = (getCart) => {
         e.preventDefault();
 
         const formData = new FormData(modalDeliveryForm);
-        console.log(Object.fromEntries(formData));
+        // console.log(Object.fromEntries(formData));
 
         const data = Object.fromEntries(formData)
         data.order = getCart()
@@ -25,6 +25,6 @@ export const orderController = (getCart) => {
             method: 'post',
             body: JSON.stringify(data),
         }).then(res => res.json())
-         .then(console.log)
+         .then(data => console.log(data))
     })
 }
