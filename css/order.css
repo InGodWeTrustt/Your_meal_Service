@@ -12,6 +12,7 @@
   background: #FFFFFF;
   border-radius: 12px;
   padding: 16px 10px;
+  z-index: 10;
 }
 
 .order__wrap-title {
@@ -19,6 +20,12 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* Когда мы наводим на элемент и внцтри ордер тайтла*/
+.order__wrap-title:hover .order__title {
+  color: #ffab08
 }
 
 .order__title {
@@ -123,6 +130,7 @@
 .order__submit:disabled {
   background-color: #F9F9F9;
   color: #ACACAC;
+  cursor: no-drop;
 }
 
 .order__appeal {
@@ -159,17 +167,22 @@
   }
 
 
-
   .order__wrap-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+    cursor: default;
   }
 
   .order__title {
     font-size: 24px;
   }
+
+  .order__wrap-title:hover .order__title {
+    color: inherit;
+  }
+  
 
   .order__count {
     font-size: 12px;
