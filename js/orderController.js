@@ -1,5 +1,5 @@
 import { clearCart } from "./cart.js"
-import { modalDeliveryForm } from "./elements.js"
+import { modalDeliveryContainer, modalDeliveryForm } from "./elements.js"
 
 export const orderController = (getCart) => {
     modalDeliveryForm.addEventListener('change', () => {
@@ -26,7 +26,20 @@ export const orderController = (getCart) => {
             method: 'post',
             body: JSON.stringify(data),
         }).then(res => res.json())
-            .then(data => console.log(data))
-            .finally(clearCart)
-    })
+            .then(resp => {
+                clearCart()
+                modalDeliveryForm.reset()
+                modalDeliveryContainer.insertHTML = `
+                  <h2>Спасибо большое за заказ!</h2>
+                  <h3>Ваш номер заказа ${resp.id}</h3>
+                `;
+
+                const ul = document.querySelector('ul')
+                data.order.forEach(item => {
+                    ul.insertAdjacentHTML('beforebegin', `<li>${item.title}</li>`)
+                }
+
+                modalDeliveryContainer.insertAdjacentElement('beforebegin')
+            })
+})
 }
