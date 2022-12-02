@@ -1,12 +1,10 @@
 import { cartInit } from "./cart.js";
-import { createCardProduct } from "./createCardProduct.js";
 import {
     catalogList,
     modalProduct
 } from "./elements.js";
 import { navigationListController } from "./navigationListController.js";
 import { openModal } from "./openModal.js";
-import { renderCartList } from "./cart.js";
 import { renderListProduct } from "./renderListProduct.js";
 
 
